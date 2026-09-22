@@ -1,0 +1,93 @@
+:root {
+  --black: #050505;
+  --black-2: #0a0a0a;
+  --panel: #101010;
+  --panel-2: #151515;
+  --line: #2b2b2b;
+  --white: #ffffff;
+  --muted: #a1a1a1;
+  --soft: #d8d8d8;
+}
+
+* { box-sizing: border-box; }
+button, input { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+
+.auth-page, .dashboard-page {
+  min-height: 100vh;
+  color: var(--white);
+  background: radial-gradient(circle at 50% -10%, #202020 0, var(--black) 42%, #000 100%);
+}
+
+.auth-page { display: grid; place-items: center; padding: 32px 18px; position: relative; overflow: hidden; }
+.auth-glow { position: absolute; width: 420px; height: 420px; border: 1px solid #303030; border-radius: 50%; opacity: .28; }
+.glow-one { top: -230px; left: -160px; }
+.glow-two { bottom: -280px; right: -140px; }
+.auth-card { position: relative; width: min(440px, 100%); padding: 42px; border: 1px solid var(--line); border-radius: 24px; background: rgba(13,13,13,.92); box-shadow: 0 30px 90px rgba(0,0,0,.55); text-align: center; }
+.brand-mark { width: 48px; height: 48px; display: grid; place-items: center; margin: 0 auto 24px; border: 1px solid #fff; border-radius: 14px; font-weight: 900; font-size: 20px; background: #fff; color: #000; }
+.brand-mark.small { width: 34px; height: 34px; margin: 0; border-radius: 10px; font-size: 15px; }
+.eyebrow { display: inline-block; color: #bfbfbf; font-size: 11px; font-weight: 800; letter-spacing: 2px; }
+.auth-card h1 { font-size: clamp(30px, 6vw, 42px); letter-spacing: -1.5px; margin: 10px 0 8px; }
+.auth-subtitle, .hero-section p { color: var(--muted); margin: 0; line-height: 1.6; }
+.auth-form { display: grid; gap: 16px; margin-top: 28px; text-align: left; }
+.auth-form label { display: grid; gap: 8px; color: var(--soft); font-size: 13px; font-weight: 700; }
+.auth-form input { width: 100%; padding: 14px 15px; color: #fff; background: #0b0b0b; border: 1px solid #333; border-radius: 11px; outline: none; transition: .2s; }
+.auth-form input:focus { border-color: #fff; box-shadow: 0 0 0 3px rgba(255,255,255,.08); }
+.primary-btn { border: 0; border-radius: 11px; padding: 14px 18px; color: #000; background: #fff; font-weight: 900; cursor: pointer; transition: transform .2s, background .2s; }
+.primary-btn:hover { transform: translateY(-2px); background: #e7e7e7; }
+.primary-btn span { margin-left: 8px; }
+.switch-auth { margin: 24px 0 0; color: #8f8f8f; font-size: 13px; }
+.switch-auth button { border: 0; background: transparent; color: #fff; text-decoration: underline; cursor: pointer; font-weight: 800; }
+.notice { margin-top: 15px; padding: 10px 12px; border: 1px solid #343434; border-radius: 9px; background: #151515; color: #e5e5e5; font-size: 13px; }
+
+.dashboard-page { padding-bottom: 34px; }
+.topbar { width: min(1100px, calc(100% - 36px)); margin: 0 auto; min-height: 76px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #1d1d1d; }
+.brand { display: flex; align-items: center; gap: 11px; color: #fff; background: transparent; border: 0; font-weight: 900; cursor: pointer; }
+.top-actions { display: flex; align-items: center; gap: 12px; }
+.user-chip { color: #aaa; font-size: 13px; }
+.ghost-btn { color: #fff; background: transparent; border: 1px solid #363636; border-radius: 9px; padding: 9px 14px; cursor: pointer; }
+.ghost-btn:hover { background: #161616; }
+.hero-section { width: min(900px, calc(100% - 36px)); margin: 78px auto 38px; text-align: center; }
+.hero-section h1 { margin: 12px 0 10px; font-size: clamp(38px, 7vw, 72px); line-height: 1; letter-spacing: -3.5px; }
+.hero-section h1 span { color: #8c8c8c; }
+.hero-section p { font-size: 16px; }
+.poll-card { width: min(760px, calc(100% - 36px)); margin: 0 auto; padding: 26px; border: 1px solid #303030; border-radius: 24px; background: linear-gradient(145deg, #111 0%, #090909 100%); box-shadow: 0 28px 80px rgba(0,0,0,.45); }
+.poll-head { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; padding: 2px 3px 24px; }
+.live-badge { display: inline-flex; align-items: center; gap: 7px; padding: 6px 9px; border: 1px solid #444; border-radius: 999px; color: #fff; font-size: 10px; font-weight: 900; letter-spacing: 1px; margin-bottom: 14px; }
+.live-badge i { width: 6px; height: 6px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px #fff; }
+.poll-head h2 { margin: 0; font-size: 24px; letter-spacing: -.7px; }
+.total-badge { min-width: 68px; text-align: right; }
+.total-badge strong { display: block; font-size: 26px; }
+.total-badge small { color: #777; }
+.option-list { display: grid; gap: 12px; }
+.poll-option { width: 100%; padding: 16px; border: 1px solid #303030; border-radius: 14px; color: #fff; background: #0d0d0d; cursor: pointer; text-align: left; transition: .2s; }
+.poll-option:hover, .poll-option.selected { border-color: #777; background: #151515; }
+.option-top { display: flex; align-items: center; gap: 12px; }
+.radio { width: 22px; height: 22px; border: 1px solid #555; border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto; }
+.radio span { width: 10px; height: 10px; border-radius: 50%; background: #fff; opacity: 0; }
+.selected .radio { border-color: #fff; }
+.selected .radio span { opacity: 1; }
+.option-top strong { flex: 1; font-size: 15px; }
+.percentage { font-size: 14px; font-weight: 900; }
+.progress-track { height: 6px; background: #242424; border-radius: 999px; overflow: hidden; margin: 13px 0 9px; }
+.progress-fill { height: 100%; border-radius: inherit; background: #fff; transition: width .35s ease; }
+.vote-count { display: block; color: #777; font-size: 12px; text-align: center; }
+.vote-btn { width: 100%; margin-top: 18px; }
+.dashboard-notice { text-align: center; }
+.stats-grid { width: min(760px, calc(100% - 36px)); margin: 18px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.stat-card { border: 1px solid #242424; border-radius: 15px; background: #0c0c0c; padding: 18px; }
+.stat-card span, .stat-card small { color: #777; font-size: 12px; }
+.stat-card strong { display: block; margin: 8px 0 4px; font-size: 18px; }
+.stat-card small { display: block; }
+footer { width: min(760px, calc(100% - 36px)); margin: 30px auto 0; text-align: center; color: #555; font-size: 12px; }
+
+@media (max-width: 680px) {
+  .auth-card { padding: 30px 22px; }
+  .topbar { min-height: 68px; }
+  .user-chip { display: none; }
+  .hero-section { margin-top: 58px; }
+  .hero-section h1 { letter-spacing: -2px; }
+  .poll-card { padding: 18px; }
+  .poll-head h2 { font-size: 20px; }
+  .stats-grid { grid-template-columns: 1fr; }
+}
